@@ -1,3 +1,8 @@
+Forked from [Loirooriol](https://github.com/Loirooriol/tab-counter-plus), modified to send data to a remote server.  
+A copy of the original README.md is included below.
+
+---
+
 # Tab Counter Plus
 
 This WebExtension shows the number of tabs in each Firefox window. It's efficient and customizable.
@@ -9,8 +14,6 @@ This WebExtension shows the number of tabs in each Firefox window. It's efficien
 You can download it from [Releases](https://github.com/Loirooriol/tab-counter-plus/releases) or from [Firefox Add-ons (AMO)](https://addons.mozilla.org/firefox/addon/tab-counter-plus).
 
 ### Features
-
-:heavy_plus_sign: Option to report to remote server.
 
 :heavy_check_mark: Can count the number of tabs in each window or among all.
 
