@@ -15,16 +15,20 @@
 //
 
 (async () => {
-  const [
-    {length: thisWindow},
-    {length: allWindows},
-    {length: numWindows},
-  ] = await Promise.all([
-    browser.tabs.query({currentWindow: true}),
-    browser.tabs.query({}),
-    browser.windows.getAll(),
-  ]);
-  document.getElementById("this-window").textContent = thisWindow;
-  document.getElementById("all-windows").textContent = allWindows;
-  document.getElementById("num-windows").textContent = numWindows;
+    if (!browser.windows) {
+        browser.windows = {
+            getAll: () => {
+                return [{}];
+            },
+        };
+    }
+
+    const [{ length: thisWindow }, { length: allWindows }, { length: numWindows }] = await Promise.all([
+        browser.tabs.query({ currentWindow: true }),
+        browser.tabs.query({}),
+        browser.windows.getAll(),
+    ]);
+    document.getElementById("this-window").textContent = thisWindow;
+    document.getElementById("all-windows").textContent = allWindows;
+    document.getElementById("num-windows").textContent = numWindows;
 })();

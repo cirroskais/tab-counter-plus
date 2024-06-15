@@ -3,7 +3,7 @@
     "short_name": "Tab Counter",
     "author": "Oriol Brufau & cirroskais",
     "homepage_url": "https://github.com/cirroskais/tab-counter-plus",
-    "version": "4.0",
+    "version": "4.1",
     "description": "Original from Loirooriol on GitHub, modified to upload data to remote server.",
     "manifest_version": 2,
     "applications": {

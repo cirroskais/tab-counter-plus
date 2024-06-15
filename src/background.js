@@ -167,12 +167,16 @@ async function startup() {
             numTabs.delete(windowId);
             lastTime.delete(windowId);
         });
-        const windows = await browser.windows.getAll({ populate: true });
-        for (const {
-            id,
-            tabs: { length },
-        } of windows) {
-            update(id, length);
+
+        // Mobile check
+        if (browser.windows) {
+            const windows = await browser.windows.getAll({ populate: true });
+            for (const {
+                id,
+                tabs: { length },
+            } of windows) {
+                update(id, length);
+            }
         }
     } else {
         const tabs = await browser.tabs.query({});
@@ -180,6 +184,7 @@ async function startup() {
     }
     for (const [api, listeners] of Object.entries(events)) {
         for (const [event, listener] of listeners) {
+            if (api === "windows") continue;
             browser[api][event].addListener(listener);
         }
     }
@@ -210,7 +215,8 @@ async function track() {
 
     if (prefs?.trackingEnabled && prefs?.trackingUrl && prefs?.trackingKey) {
         const allTabs = await browser.tabs.query({});
-        const allWindows = await browser.windows.getAll();
+        let allWindows = 1;
+        if (browser.windows) allWindows = await browser.windows.getAll();
 
         try {
             const url = new URL(prefs.trackingUrl);
