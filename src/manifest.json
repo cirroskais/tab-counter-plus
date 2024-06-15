@@ -1,36 +1,34 @@
 {
-  "name": "Tab Counter Plus",
-  "short_name": "Tab Counter",
-  "author": "Oriol Brufau",
-  "homepage_url": "https://github.com/Loirooriol/tab-counter-plus",
-  "version": "3.4",
-  "description": "Shows the number of tabs in each window. Efficient and customizable.",
-  "manifest_version": 2,
-  "applications": {
-    "gecko": {
-      "id": "tab-counter-plus@Loirooriol",
-      "strict_min_version": "63.0"
-    }
-  },
-  "icons": {
-    "16": "icon16.gif",
-    "64": "icon.svg"
-  },
-  "permissions": [
-    "storage"
-  ],
-  "browser_action": {
-    "default_icon": {
-      "16": "icon16.gif",
-      "64": "icon.svg"
+    "name": "Tab Counter Plus w/ Remote Tracking",
+    "short_name": "Tab Counter",
+    "author": "Oriol Brufau & cirroskais",
+    "homepage_url": "https://github.com/cirroskais/tab-counter-plus",
+    "version": "4.0",
+    "description": "Original from Loirooriol on GitHub, modified to upload data to remote server.",
+    "manifest_version": 2,
+    "applications": {
+        "gecko": {
+            "id": "tab-counter-plus@cirroskais",
+            "strict_min_version": "63.0"
+        }
     },
-    "default_popup": "popup.html"
-  },
-  "options_ui": {
-    "page": "options.html"
-  },
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": true
-  }
+    "icons": {
+        "16": "icon16.gif",
+        "64": "icon.svg"
+    },
+    "permissions": ["storage"],
+    "browser_action": {
+        "default_icon": {
+            "16": "icon16.gif",
+            "64": "icon.svg"
+        },
+        "default_popup": "popup.html"
+    },
+    "options_ui": {
+        "page": "options.html"
+    },
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": true
+    }
 }

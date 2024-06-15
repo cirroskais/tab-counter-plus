@@ -10,6 +10,8 @@ You can download it from [Releases](https://github.com/Loirooriol/tab-counter-pl
 
 ### Features
 
+:heavy_plus_sign: Option to report to remote server.
+
 :heavy_check_mark: Can count the number of tabs in each window or among all.
 
 :heavy_check_mark: Two display modes: SVG text icon or WebExtension badge.
